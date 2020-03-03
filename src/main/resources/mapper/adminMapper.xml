@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ywb.verification.mapper.adminMapper">
+<select id="selectMovie" resultType="com.ywb.verification.pojo.Movie" >
+    SELECT m.id, m.name name FROM movie m GROUP BY m.name ,m.id
+
+</select>
+    <select id="getOneTagSelect" resultType="com.ywb.verification.pojo.Tag" >
+         SELECT * FROM tag
+
+</select>
+
+    <insert id="insertshow" useGeneratedKeys="true" keyProperty="id"   parameterType="com.ywb.verification.pojo.Show">
+        insert  into `show` (theater_name, `time`,price,movie_id,seat_map) values (#{theaterName},#{time},#{price},#{movieId},#{seatMap})
+    </insert>
+
+
+<select id="inserttagmovie"  parameterType="String">
+         INSERT INTO tag_movie(tag_id,movie_id) VALUES(#{tagId},#{movieId});
+
+</select>
+
+
+    <select id="insertseat"  parameterType="com.ywb.verification.pojo.Seat">
+             INSERT INTO `seat` VALUES (#{showId}, #{row},#{col},#{isBooked});
+
+</select>
+
+</mapper>

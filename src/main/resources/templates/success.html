@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>匹配系统</title>
+</head>
+<body>
+<h1 style="color: red">第一次匹配数据可能存在误差，try again</h1>
+<h2 th:text="${msg}"/>
+<table border="1">
+    <tr>
+        <th>编号</th>
+        <th>联系方式</th>
+        <th>瓶数</th>
+
+    </tr>
+    <tr  th:each="data,userStat : ${datas}">
+        <td th:text="${data.code}">Onions</td>
+        <td th:text="${data.phone}">test@test.com.cn</td>
+        <td th:text="${data.number}">test@test.com.cn</td>
+
+    </tr>
+</table>
+</body>
+</html>
