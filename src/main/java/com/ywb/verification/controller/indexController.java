@@ -9,6 +9,7 @@ import com.ywb.verification.service.adminService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -46,6 +47,7 @@ public class indexController   {
     }
 
     @PostMapping("/insertMovie")
+    @Transactional
     public Boolean insertMovie(Movie movie,String tagId){
         System.out.println("111111111111"+movie.toString());
         boolean save = adminService.save(movie);
@@ -88,6 +90,14 @@ public class indexController   {
                 adminMapper.insertseat(seat);
             }
         }
+        return null;
+    }
+
+    @PutMapping("/insert")
+    public Boolean editShow(Show Show,String tagname){
+
+        Boolean insertshow = adminMapper.editshow(Show);
+
         return null;
     }
 

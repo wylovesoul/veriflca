@@ -16,8 +16,9 @@ public interface adminMapper extends BaseMapper<Movie> {
 
     List<Tag> getOneTagSelect();
 
-    boolean inserttagmovie(@Param("tagId")String tagId,@Param("movieId") String movieId);
+    Boolean inserttagmovie(@Param("tagId")String tagId,@Param("movieId") String movieId);
 
     Boolean insertshow(Show show);
+    Boolean editshow(Show show);
     Boolean insertseat(Seat Seat);
 }

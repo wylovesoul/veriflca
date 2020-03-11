@@ -14,6 +14,9 @@
         insert  into `show` (theater_name, `time`,price,movie_id,seat_map) values (#{theaterName},#{time},#{price},#{movieId},#{seatMap})
     </insert>
 
+    <update id="editshow" parameterType="com.ywb.verification.pojo.Show">
+        update `show` set `time` = #{time} ,price = #{price} ,movie_id = #{movieId} where id = #{id}
+    </update>
 
 <select id="inserttagmovie"  parameterType="String">
          INSERT INTO tag_movie(tag_id,movie_id) VALUES(#{tagId},#{movieId});

@@ -7,5 +7,3 @@ spring:
     url: jdbc:mysql://47.98.52.95:6789/movietime?characterEncoding=UTF-8
     username: root
     password: klav
-  jpa:
-    show-sql: true

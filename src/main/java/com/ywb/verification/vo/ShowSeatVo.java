@@ -10,6 +10,7 @@ import java.io.Serializable;
 public class ShowSeatVo implements Serializable {
     private static final long serialVersionUID = 1L;
     private long id;
+    private String name;
     private String theaterName;
     private String time;
     private int price;
